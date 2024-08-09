@@ -15,14 +15,19 @@ A simple CLI application using golang which fetches weather data form `https://w
 
 2. Create `.env` file at the root
 
-   ````env
+   ```env
      WEATHER_API=<api key from https://www.weatherapi.com>
    ```
-   ````
 
 3. Build the project as
 
    ```bash
      go build -o main main.go
      ./main
+   ```
+
+4. To check the arguments that can be pass run
+
+   ```bash
+     ./main --help
    ```
