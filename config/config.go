@@ -7,10 +7,22 @@ import (
 	"strings"
 )
 
+// EnvConfig holds the configuration values loaded from the environment file.
 type EnvConfig struct {
-	WeatherApi string
+	WeatherApi string // WeatherApi is the API key for accessing the weather service.
 }
 
+// loadEnv reads the environment file provided at the given envFilePath
+// and returns a map containing key-value pairs from the env file.
+//
+// It skips lines that are comments (starting with "#") or empty.
+//
+// Parameters:
+// - envFilePath: The file path to the .env file to be read.
+//
+// Returns:
+// - A map of environment variables, where the keys are the variable names and the values are the corresponding values.
+// - An error if the file cannot be opened or read.
 func loadEnv(envFilePath string) (map[string]string, error) {
 	envMap := make(map[string]string)
 	file, err := os.OpenFile(envFilePath, os.O_RDONLY, fs.FileMode(os.O_RDONLY))
@@ -37,6 +49,15 @@ func loadEnv(envFilePath string) (map[string]string, error) {
 	return envMap, nil
 }
 
+// GetConfig loads the configuration from the specified environment file
+// and returns an EnvConfig struct populated with the loaded values.
+//
+// Parameters:
+// - envFilePath: The file path to the .env file to be read.
+//
+// Returns:
+// - An EnvConfig struct containing the loaded configuration values.
+// - An error if the environment file cannot be read or parsed.
 func GetConfig(envFilePath string) (EnvConfig, error) {
 	env, err := loadEnv(envFilePath)
 	if err != nil {
