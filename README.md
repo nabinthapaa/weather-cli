@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A simple CLI application using golang which fetches weather data form `https://www.weatherapi.com` and displays in a tabular format in terminal
+A simple CLI application using golang which fetches weather data form [`https://www.weatherapi.com`](https://www.weatherapi.com) and displays in a tabular format in terminal
 
 ## Setup
 
