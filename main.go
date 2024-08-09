@@ -6,8 +6,8 @@ import (
 	"io"
 	"net/http"
 	"time"
-	"web-scrapper/config"
-	"web-scrapper/structs"
+	"weather/config"
+	"weather/structs"
 
 	"github.com/alecthomas/kong"
 	"github.com/jedib0t/go-pretty/v6/table"

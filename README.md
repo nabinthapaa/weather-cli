@@ -19,7 +19,7 @@ A simple CLI application using golang which fetches weather data form `https://w
      WEATHER_API=<api key from https://www.weatherapi.com>
    ```
 
-3. Build the project as
+3. Build the project and run
 
    ```bash
      go build -o main main.go
